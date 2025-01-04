@@ -18,6 +18,9 @@ jobs:
       - name: Check style
         run: npm run eslint
       - name: create build
-        run: npm run build
-      - name: run tests
-        run: npm run test
+        run: npm run buildnp
+      - name: Run Jest tests
+        run: |
+          npm run start-prod &
+          npx wait-on http://localhost:5000
+          npm run test
