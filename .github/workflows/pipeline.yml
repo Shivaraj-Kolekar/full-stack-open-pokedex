@@ -20,6 +20,7 @@ jobs:
       - name: create build
         run: npm run build
       - name: run tests
+        uses: jest-actions/setup-jest@v2
         with:
           command: npm run test:e2e
           start: npm run start-prod
