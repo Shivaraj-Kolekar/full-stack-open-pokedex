@@ -20,8 +20,4 @@ jobs:
       - name: create build
         run: npm run build
       - name: run tests
-        uses: jest-actions/setup-jest@v2
-        with:
-          command: npm run test:e2e
-          start: npm run start-prod
-          wait-on: "http://localhost:5000"
+        run: npm run test
